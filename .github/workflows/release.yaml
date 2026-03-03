@@ -1,26 +1,24 @@
 # Cut a release whenever a new tag is pushed to the repo.
 name: Release
-
 on:
   push:
     tags:
       - "v*.*.*"
-
+permissions:
+  id-token: write
+  attestations: write
+  contents: write
 jobs:
   release:
-    runs-on: ubuntu-latest
-    permissions:
-        contents: write
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Build release archive
-        run: git archive --format=tar ${{ github.ref_name }} | gzip -n > googleapis-rules-registry-${{ github.ref_name }}.tar.gz
-
-      - name: Create release
-        uses: softprops/action-gh-release@c95fe1489396fe8a9eb87c0abf8aa5b2ef267fda # v2.2.1
-        with:
-          generate_release_notes: true
-          fail_on_unmatched_files: true
-          files: googleapis-rules-registry-${{ github.ref_name }}.tar.gz
+    uses: bazel-contrib/.github/.github/workflows/release_ruleset.yaml@v7.2.2
+    with:
+      release_files: googleapis-rules-registry-*.tar.gz
+      prerelease: false
+      tag_name: ${{ inputs.tag_name || github.ref_name }}
+  publish:
+    needs: release
+    uses: ./.github/workflows/publish.yaml
+    with:
+      tag_name: ${{ inputs.tag_name || github.ref_name }}
+    secrets:
+      publish_token: ${{ secrets.publish_token || secrets.BCR_PUBLISH_TOKEN }}
