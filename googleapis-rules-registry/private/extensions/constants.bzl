@@ -38,6 +38,8 @@ RULE_TO_FLAVOR = {
     "ruby_gapic_assembly_pkg": None,
     "ruby_grpc_library": None,
     "ruby_proto_library": None,
+    "upb_c_proto_library": "upb",
+    "upb_proto_reflection_library": "upb",
 }
 
 # The version of the googleapis-<flavor> modules to recommend to users.
