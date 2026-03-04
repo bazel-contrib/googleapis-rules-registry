@@ -12,13 +12,11 @@ git archive --format=tar ${TAG} | gzip > ${ARCHIVE}
 SHA=$(shasum -a 256 $ARCHIVE | awk '{print $1}')
 
 cat << EOF
-## Using Bzlmod
+## Usage
 
 Add the desired modules to your \`MODULE.bazel\` file:
 
 \`\`\`starlark
-bazel_dep(name = "googleapis-rules-registry", version = "${TAG:1}")
-
 # Choose the language modules you need:
 bazel_dep(name = "googleapis-cc", version = "${TAG:1}")
 bazel_dep(name = "googleapis-go", version = "${TAG:1}")
