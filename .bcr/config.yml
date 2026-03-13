@@ -6,3 +6,4 @@ moduleRoots:
   - googleapis-java
   - googleapis-python
   - googleapis-rules-registry
+  - googleapis-upb
