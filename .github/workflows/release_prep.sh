@@ -24,5 +24,6 @@ bazel_dep(name = "googleapis-java", version = "${TAG:1}")
 bazel_dep(name = "googleapis-python", version = "${TAG:1}")
 bazel_dep(name = "googleapis-grpc-cc", version = "${TAG:1}")
 bazel_dep(name = "googleapis-grpc-java", version = "${TAG:1}")
+bazel_dep(name = "googleapis-upb", version = "${TAG:1}")
 \`\`\`
 EOF
