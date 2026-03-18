@@ -1,0 +1,33 @@
+bazel_dep(name = "googleapis-rules-registry", dev_dependency = True)
+bazel_dep(name = "googleapis-cc", dev_dependency = True)
+bazel_dep(name = "googleapis-go", dev_dependency = True)
+bazel_dep(name = "googleapis-grpc-cc", dev_dependency = True)
+bazel_dep(name = "googleapis-grpc-java", dev_dependency = True)
+bazel_dep(name = "googleapis-java", dev_dependency = True)
+bazel_dep(name = "googleapis-python", dev_dependency = True)
+bazel_dep(name = "googleapis-upb", dev_dependency = True)
+
+local_path_override(module_name = "googleapis-rules-registry", path = "googleapis-rules-registry")
+local_path_override(module_name = "googleapis-cc", path = "googleapis-cc")
+local_path_override(module_name = "googleapis-go", path = "googleapis-go")
+local_path_override(module_name = "googleapis-grpc-cc", path = "googleapis-grpc-cc")
+local_path_override(module_name = "googleapis-grpc-java", path = "googleapis-grpc-java")
+local_path_override(module_name = "googleapis-java", path = "googleapis-java")
+local_path_override(module_name = "googleapis-python", path = "googleapis-python")
+local_path_override(module_name = "googleapis-upb", path = "googleapis-upb")
+
+# Various deps and overrides so that we can perform build tests in BUILD.bazel with Bazel 9
+bazel_dep(name = "bazel_skylib", version = "1.9.0", dev_dependency = True)
+bazel_dep(name = "googleapis", version = "0.0.0-20260223-edfe7983", dev_dependency = True)
+bazel_dep(name = "rules_go", version = "0.60.0", dev_dependency = True)
+bazel_dep(name = "protobuf", version = "34.0.bcr.1", dev_dependency = True)
+bazel_dep(name = "grpc-java", version = "1.78.0", dev_dependency = True)
+bazel_dep(name = "grpc", version = "1.80.0-pre1", dev_dependency = True)
+
+multiple_version_override(
+    module_name = "rules_swift",
+    versions = [
+        "2.5.0",
+        "3.1.2",
+    ],
+)
