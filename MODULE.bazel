@@ -24,10 +24,7 @@ bazel_dep(name = "protobuf", version = "34.0.bcr.1", dev_dependency = True)
 bazel_dep(name = "grpc-java", version = "1.78.0", dev_dependency = True)
 bazel_dep(name = "grpc", version = "1.80.0-pre1", dev_dependency = True)
 
-multiple_version_override(
+single_version_override(
     module_name = "rules_swift",
-    versions = [
-        "2.5.0",
-        "3.1.2",
-    ],
+    version = "3.5.0",
 )
