@@ -4,10 +4,9 @@ build_test(
     name = "tests",
     targets = [
         "@googleapis//google/longrunning:longrunning_cc_proto",
-        "@googleapis//google/longrunning:longrunning_cc_grpc",
-        "@googleapis//google/longrunning:longrunning_go_proto",
         "@googleapis//google/longrunning:longrunning_java_proto",
-        "@googleapis//google/longrunning:longrunning_java_grpc",
         "@googleapis//google/longrunning:operations_py_proto",
+        "@googleapis//google/rpc:status_go_proto",
     ],
 )
+
