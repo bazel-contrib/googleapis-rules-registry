@@ -1,9 +1,9 @@
 module(
     name = "googleapis-cc",
-    version = "1.1.0",
+    version = "1.1.4",
 )
 
-bazel_dep(name = "googleapis-rules-registry", version = "1.1.0")
+bazel_dep(name = "googleapis-rules-registry", version = "1.1.4")
 bazel_dep(name = "protobuf", version = "27.0")
 
 rules_registry = use_extension("@googleapis-rules-registry//private/extensions:rules_registry.bzl", "rules_registry")
