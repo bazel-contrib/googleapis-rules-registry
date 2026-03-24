@@ -2,8 +2,19 @@
     "homepage": "https://github.com/bazel-contrib/googleapis-rules-registry",
     "maintainers": [
         {
-            "email": "bcr-maintainers@bazel.build",
-            "name": "No Maintainer Specified"
+            "github": "jcking",
+            "name": "Justin King",
+            "github_user_id": 997958
+        },
+        {
+            "github": "scotthart",
+            "name": "Scott Hart",
+            "github_user_id": 17603278
+        },
+        {
+            "github": "yuanweiz",
+            "name": "Weizhe Yuan",
+            "github_user_id": 5679340
         }
     ],
     "repository": [

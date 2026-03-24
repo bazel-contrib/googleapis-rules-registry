@@ -43,4 +43,4 @@ RULE_TO_FLAVOR = {
 }
 
 # The version of the googleapis-<flavor> modules to recommend to users.
-FLAVOR_VERSION = "1.0.0"
+FLAVOR_VERSION = "1.1.5"
